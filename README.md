@@ -25,9 +25,33 @@ Developed as part of an evaluation for a Full Stack Web Developer role, this pro
 - **Other Tools**: Caddy for frontend proxy, Node.js `child_process` for Python integration
 
 ## Project Structure
+The project is organized for clarity and modularity, with separate directories for frontend, backend, and configuration files. Below is the structure, formatted for visual appeal:
 
-task-manager-app/├── backend/│   ├── src/│   │   ├── app.js              # Express server and API routes│   │   └── vector_service.py   # Python script for vector search│   ├── Dockerfile              # Backend Docker configuration│   ├── package.json            # Node.js dependencies│   └── requirements.txt        # Python dependencies├── frontend/│   ├── src/│   │   ├── components/│   │   │   ├── TaskList.js     # Main React component│   │   │   └── TaskList.css    # Component styles│   │   ├── services/│   │   │   └── api.js          # API service with caching│   │   ├── App.js              # Root React component│   │   ├── App.css             # Global styles│   │   └── index.js            # React entry point│   ├── public/│   │   └── index.html          # HTML template│   ├── Dockerfile              # Frontend Docker configuration│   ├── Caddyfile               # Caddy configuration│   └── package.json            # Frontend dependencies├── docker-compose.yml          # Docker Compose configuration└── README.md                   # Project documentation
-
+task-manager-app/
+├── backend/                    # Backend service (Node.js + Python)
+│   ├── src/                    # Source code
+│   │   ├── app.js              # Express server and API routes
+│   │   └── vector_service.py   # Python script for vector search
+│   ├── Dockerfile              # Docker configuration for backend
+│   ├── package.json            # Node.js dependencies
+│   └── requirements.txt        # Python dependencies
+├── frontend/                   # Frontend service (React)
+│   ├── src/                    # React source code
+│   │   ├── components/         # Reusable React components
+│   │   │   ├── TaskList.js     # Main task display component
+│   │   │   └── TaskList.css    # Component-specific styles
+│   │   ├── services/           # API and caching logic
+│   │   │   └── api.js          # API service with local storage
+│   │   ├── App.js              # Root React component
+│   │   ├── App.css             # Global styles
+│   │   └── index.js            # React entry point
+│   ├── public/                 # Static assets
+│   │   └── index.html          # HTML template
+│   ├── Dockerfile              # Docker configuration for frontend
+│   ├── Caddyfile               # Caddy configuration for proxy
+│   └── package.json            # Frontend dependencies
+├── docker-compose.yml          # Docker Compose configuration
+└── README.md                   # Project documentation
 ## Approach
 
 ### 1. **Architecture Design**
